@@ -1,0 +1,21 @@
+name: build-windows
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: haskell-actions/setup@v2
+        with:
+          ghc-version: "9.12.3"
+
+      - run: ghc -O2 -o sumanumeros.exe sumanumeros.hs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sumanumeros-exe
+          path: sumanumeros.exe
