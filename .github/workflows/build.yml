@@ -13,9 +13,19 @@ jobs:
         with:
           ghc-version: "9.12.3"
 
-      - run: ghc -O2 -o sumanumeros.exe sumanumeros.hs
+      - name: Compilar todos los ejecutables
+        shell: bash
+        run: |
+          mkdir -p dist
+          ghc -O2 -o dist/hola.exe proyecto2.0/hola.hs
+          ghc -O2 -o dist/nombre.exe proyecto2.1/nombre.hs
+          ghc -O2 -o dist/sumanumeros_3.0.exe proyecto3.0/sumanumeros.hs
+          ghc -O2 -o dist/Division.exe proyecto3.1/Division.hs
+          ghc -O2 -o dist/Multiplicacion.exe proyecto3.1/Multiplicacion.hs
+          ghc -O2 -o dist/Resta.exe proyecto3.1/Resta.hs
+          ghc -O2 -o dist/sumanumeros_4.0.exe proyecto4.0/sumanumeros.hs
 
       - uses: actions/upload-artifact@v4
         with:
-          name: sumanumeros-exe
-          path: sumanumeros.exe
+          name: todos-los-exe
+          path: dist/*.exe
