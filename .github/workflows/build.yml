@@ -19,11 +19,14 @@ jobs:
           mkdir -p dist
           ghc -O2 -o dist/hola.exe proyecto2.0/hola.hs
           ghc -O2 -o dist/nombre.exe proyecto2.1/nombre.hs
-          ghc -O2 -o dist/sumanumeros_3.0.exe proyecto3.0/sumanumeros.hs
+          ghc -O2 -o dist/sumanumeros.exe proyecto3.0/sumanumeros.hs
           ghc -O2 -o dist/Division.exe proyecto3.1/Division.hs
           ghc -O2 -o dist/Multiplicacion.exe proyecto3.1/Multiplicacion.hs
           ghc -O2 -o dist/Resta.exe proyecto3.1/Resta.hs
-          ghc -O2 -o dist/sumanumeros_4.0.exe proyecto4.0/sumanumeros.hs
+          ghc -O2 -o dist/sumanumeros_proyecto4.exe proyecto4.0/sumanumeros.hs
+          ghc -O2 -o dist/areaCirculo.exe proyecto4.1/areaCirculo.hs
+          ghc -O2 -o dist/areaCuadrado.exe proyecto4.1/areaCuadrado.hs
+          ghc -O2 -o dist/areaRectangulo.exe proyecto4.1/areaRectangulo.hs
 
       - uses: actions/upload-artifact@v4
         with:
